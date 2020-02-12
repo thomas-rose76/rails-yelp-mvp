@@ -1,13 +1,26 @@
-<h1 class="text-center">Restaurants list</h1>
+<div class="container text-center">
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <ul>
-        <% @restaurants.each do |restaurant| %>
-        <li><%= restaurant.name %></li>
-        <%end  %>
-      </ul>
+  <h2><%= @restaurant.name %></h2>
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+
+
+  <div class="list list_action text-center">
+    <p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %></p>
+    <p><%= link_to "Back to Restaurants List", restaurants_path %></p>
+  </div>
+
+  <div class="card_review text-center">
+    <% @restaurant.reviews.each do |review| %>
+    <div class="card text-center" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-text"><em>"<%= review.content %>"</em></h5>
+        <p class="card-text">Rating : <%= review.rating %>/5</p>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>
+
+

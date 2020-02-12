@@ -1,0 +1,11 @@
+<h2 class="text-center">Leave a review</h2>
+
+<div class="container">
+  <div class="add justify-center">
+    <%= simple_form_for [ @restaurant, @review ] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <button class="btn btn-success" type="submit">Submit</button>
+    <% end %>
+  </div>
+</div>

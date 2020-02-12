@@ -1,0 +1,13 @@
+<h2 class="text-center">Add a restaurant</h2>
+
+<div class="container">
+  <div class="add justify-center">
+    <%= simple_form_for(@restaurant) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :category, collection: Restaurant::CATEGORIES %>
+      <%= f.input :phone_number %>
+      <button class="btn btn-success" type="submit">Create</button>
+  <% end %>
+  </div>
+</div>

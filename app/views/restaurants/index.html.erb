@@ -1,0 +1,33 @@
+<div class="container">
+<h1 class="text-center my-5">Restaurants list</h1>
+
+  <div class="card_review text-center">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card text-center" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant) %></h5>
+          <p class="card-text"><%= restaurant.category %></p>
+        </div>
+      </div>
+    <% end  %>
+  </div>
+<div class="my-5">
+  <%= link_to "Add a restaurant", new_restaurant_path  %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-3">
+        <div class="card">
+          <div class="card-body text-center">
+          <%= restaurant.name %>
+
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
